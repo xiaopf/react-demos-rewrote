@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <style>
+    .red{
+      color:red;
+    }
+  </style>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      let HelloWorld = React.createClass ({
+        render () {
+          return <div className={this.props.className}>
+            hello {this.props.name}
+          </div>
+        }
+      });
+
+      ReactDOM.render (
+         <HelloWorld className="red" name="xiaopf"></HelloWorld>,
+         document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      class Hello extends React.Component {
+          constructor(props) {
+             super(props);
+             this.state={opacity:1};
+          }
+
+          componentDidMount() {
+            let _this = this;
+            this.timeId = setInterval(function() {
+                let opacity = _this.state.opacity;
+                if (_this.state.opacity >= 0) {
+                    opacity -= 0.1;
+                    _this.setState({opacity:opacity});
+                }else{
+                    _this.setState({opacity:1});
+                }
+            },100);
+          }
+
+          render() {
+             return (
+                 <p style={{opacity:this.state.opacity}}> Hello React!!!</p>
+             );
+          }
+
+      };
+
+      ReactDOM.render(
+          <Hello></Hello>,
+          document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

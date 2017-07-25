@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      let data = 'xiaopf';
+
+      let ShowPerfect = React.createClass({
+          propsTypes: {
+            title: React.PropTypes.string.isRequired 
+          },
+
+          getDefaultProps() {
+            return {
+              name:'pppfffxxx'
+            };
+          },
+
+          render () {
+            return (<div>
+               <span>{this.props.title}</span>
+               <hr/>
+               <span>{this.props.name}</span>
+            </div>);
+          }
+      });
+
+      ReactDOM.render(
+        <ShowPerfect title={data} />,
+        document.getElementById('example')
+      )
+
+    </script>
+  </body>
+</html>
+
